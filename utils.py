@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
 
@@ -20,6 +21,7 @@ def softmax_likelihood_ratio(state, probs, action):
     dlog = dlog[:, None]
     grad = state.T.dot(dlog)
     return grad
+
 
 def calc_gradient_ascent(grads, rewards, GAMMA, LEARNING_RATE):
     discounted_rewards = []
